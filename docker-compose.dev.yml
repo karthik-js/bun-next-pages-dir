@@ -10,22 +10,11 @@ services:
     env_file:
       - .env
     volumes:
-      - ./app:/app/app
+      - ./pages:/app/pages
       - ./public:/app/public
       - ./next.config.js:/app/.next.config.js
       - ./styles:/app/styles
       - ./tailwind.config.js:/app/tailwind.config.js
     restart: always
     ports:
-      - 3000:3000
-    networks:
-      - my_network
-
-  # Add more containers below (nginx, postgres, etc.)
-
-# Define a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-networks:
-  my_network:
-    external: true
-
+      - 3001:3000
